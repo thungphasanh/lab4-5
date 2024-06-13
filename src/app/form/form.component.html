@@ -1,0 +1,21 @@
+
+<h3>Template form</h3>
+
+<form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" name="name" ngModel #name="ngModel" required>
+        <div style="color:red" *ngIf="name.invalid && (name.dirty || name.touched)">
+        Vui lòng nhập tên
+        </div>
+        </div>
+        <div>
+        <label for="email">Email:</label>
+        <input type="email" name="email" ngModel #email="ngModel" required email>
+        <div style="color:red" *ngIf="email.invalid && (email.dirty || email.touched)">
+        <div *ngIf="email.errors?.['required']">Vui lòng nhập email</div>
+        <div *ngIf="email.errors?.['email']">Vui lòng nhập đúng định dạng email</div>
+        </div>
+        </div>
+    <button>Submit</button>
+</form>

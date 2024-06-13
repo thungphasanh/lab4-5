@@ -1,0 +1,54 @@
+<div class="abc text-white">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label>Code Sản Phẩm</label>
+            <input type="number" formControlName="productCode" class="form-control">
+            <div style="color:red"
+                *ngIf="myForm.get('productCode')?.invalid && (myForm.get('productCode')?.dirty || myForm.get('productCode')?.touched)">
+                Vui lòng nhập code
+            </div>
+            <br>
+            <label>Tên Sản Phẩm</label>
+            <input type="text" formControlName="productName" class="form-control">
+            <div style="color:red"
+                *ngIf="myForm.get('productName')?.invalid && (myForm.get('productName')?.dirty || myForm.get('productName')?.touched)">
+                Vui lòng nhập tên sp
+            </div>
+            <div style="color:red"
+            *ngIf="myForm.get('productName')?.invalid">
+    
+            </div>
+            <br>
+            <label>Mô Tả Sản Phẩm</label>
+            <input type="text" formControlName="description" class="form-control">
+            <div style="color:red"
+                *ngIf="myForm.get('description')?.invalid && (myForm.get('description')?.dirty || myForm.get('description')?.touched)">
+                Vui lòng nhập mô tả
+            </div>
+            <br>
+            <label>Giá Sản Phẩm</label>
+            <input type="number" formControlName="price" class="form-control">
+            <div style="color:red"
+                *ngIf="myForm.get('price')?.invalid && (myForm.get('price')?.dirty || myForm.get('price')?.touched)">
+                Vui lòng nhập giá
+            </div>
+            <br>
+            <label>Đánh giá</label>
+            <input type="number" formControlName="starRating" class="form-control">
+            <div style="color:red"
+                *ngIf="myForm.get('starRating')?.invalid && (myForm.get('starRating')?.dirty || myForm.get('starRating')?.touched)">
+                Vui lòng nhập đánh giá
+            </div>
+            <br>
+            <label>Hình ảnh sp</label>
+            <input type="text" formControlName="imageUrl" class="form-control">
+            <div style="color:red"
+                *ngIf="myForm.get('imageUrl')?.invalid && (myForm.get('imageUrl')?.dirty || myForm.get('imageUrl')?.touched)">
+                Vui lòng chọn ảnh
+            </div>
+            <br>
+        </div>
+        <button class="text-white" type="submit" [disabled]="myForm.invalid">Submit</button>
+        <button type="reset">Bỏ qua</button>
+    </form>
+</div>
